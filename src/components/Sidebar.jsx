@@ -1,40 +1,45 @@
 import React from 'react';
 import './Sidebar.css';
 
-const Sidebar = () => {
+const Sidebar = ({ onAddNote, onDeleteNote, notes, activeNote, setActiveNote }) => {
+  console.log(activeNote)
+
   return (
     <div className="app-sidebar">
       <div className="app-sidebar-header">
         <h1>ノート</h1>
         <button
-        // onClick={onAddNote}
+          onClick={onAddNote}
         >追加</button>
       </div>
       <div className="app-sidebar-notes">
+        {notes?.map(note => (
           <div
-            // className={`app-sidebar-note ${note.id === activeNote && "active"}`}
-            // key={note.id}
-            // id={note.id}
-            // onClick={() => setActiveNote(note.id)}
+            className={`app-sidebar-note ${note.id === activeNote ? "active" : ""}`}
+            key={note.id}
+            id={note.id}
+            onClick={() => setActiveNote(note.id)}
           >
             <div className="sidebar-note-title">
               <strong>
-                {/* {note.title} */}
+                {note.title}
               </strong>
               <button
-              // onClick={() => onDeleteNote(note.id)}
+              onClick={() => onDeleteNote(note.id)}
               >削除</button>
             </div>
             <p>
-              {/* {note.content} */}
+              {note.content}
             </p>
             <small className="note-meta">
-              {/* {new Date(note.modDate).toLocaleDateString("ja-JP", {
+              {new Date(note.modDate).toLocaleDateString("ja-JP", {
                 hour: "2-digit",
                 minute: "2-digit",
-              })} */}
+              })}
             </small>
           </div>
+        ))}
+
       </div>
     </div>
   )
