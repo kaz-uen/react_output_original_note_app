@@ -12,8 +12,8 @@ function App() {
   const onAddNote = () => {
     const newNote = {
       id: Math.floor(Math.random() * 1e5),
-      title: "新しいノート",
-      content: "ここに内容を入力",
+      title: "タイトル",
+      content: "",
       modDate: new Date(),
       isActive: false,
     };
@@ -38,6 +38,7 @@ function App() {
     const note = {
       ...targetNote,
       [key]: value,
+      modDate: new Date(),
     };
     const otherNotes = notes.filter(note => note.id !== activeNote);
     setNotes([...otherNotes, note ])
