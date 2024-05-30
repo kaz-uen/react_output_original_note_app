@@ -23,8 +23,8 @@ function App() {
   };
 
   const onDeleteNote = (id) => {
-    const newNotes = notes.filter(note => note.id !== id);
-    setNotes(newNotes);
+    const isConfirm = window.confirm("本当に削除しますか？");
+    if(isConfirm) setNotes(notes.filter(note => note.id !== id));
   };
 
   const getActiveNote = () => {
