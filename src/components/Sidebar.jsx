@@ -4,6 +4,8 @@ import './Sidebar.css';
 const Sidebar = ({ onAddNote, onDeleteNote, notes, activeNote, setActiveNote }) => {
   console.log(activeNote)
 
+  const amount = notes.length ? notes.length : 0;
+
   return (
     <div className="app-sidebar">
       <div className="app-sidebar-header">
@@ -11,6 +13,9 @@ const Sidebar = ({ onAddNote, onDeleteNote, notes, activeNote, setActiveNote }) 
         <button
           onClick={onAddNote}
         >追加</button>
+      </div>
+      <div className="app-sidebar-counter">
+        <p>{amount}</p>
       </div>
       <div className="app-sidebar-notes">
         {notes?.map(note => (
