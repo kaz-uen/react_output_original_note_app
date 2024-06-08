@@ -24,6 +24,16 @@ button:hover {
   padding: 25px;
 }
 
+.app-sidebar-counter {
+  padding: 25px;
+  border-bottom: 1px solid #ddd;
+}
+
+.app-sidebar-counter .textHighlight {
+  font-size: 1.5rem;
+  padding: 0 0.5rem;
+}
+
 .app-sidebar-header h1 {
   margin: 0;
 }

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css';
 import Main from './components/Main';
 import Sidebar from './components/Sidebar';
@@ -6,7 +6,6 @@ import Sidebar from './components/Sidebar';
 function App() {
   const [notes, setNotes] = useState([]);
   const [activeNote, setActiveNote] = useState();
-
   console.log(activeNote)
 
   const onAddNote = () => {

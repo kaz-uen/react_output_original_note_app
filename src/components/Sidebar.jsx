@@ -15,7 +15,7 @@ const Sidebar = ({ onAddNote, onDeleteNote, notes, activeNote, setActiveNote }) 
         >追加</button>
       </div>
       <div className="app-sidebar-counter">
-        <p>{amount}</p>
+        <div>メモ数：<span className="textHighlight">{amount}</span>個</div>
       </div>
       <div className="app-sidebar-notes">
         {notes?.map(note => (
